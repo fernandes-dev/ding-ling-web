@@ -1,12 +1,27 @@
 <template>
   <div class="d-flex">
-    <v-card height="30px" flat class="card-item-qtd px-2 pt-1" width="90px">
-      <b :class="item.color + '--text'" style="font-size: 16px;">
+    <v-card
+      :height="$vuetify.breakpoint.xsOnly ? '30px' : '40px'"
+      flat
+      class="card-item-qtd d-flex align-center pl-2"
+      width="90px"
+    >
+      <b
+        :class="item.color + '--text'"
+        :style="$vuetify.breakpoint.xsOnly ? 'font-size: 16px;' : 'font-size: 20px;'"
+      >
         x{{ item.current ? item.current : item.qtd }}
       </b>
     </v-card>
-    <v-card height="36px" flat class="pa-2">
-      <b :class="item.color + '--text'" style="font-size: 16px;">
+    <v-card
+      :height="$vuetify.breakpoint.xsOnly ? '30px' : '40px'"
+      flat
+      class="d-flex align-center pl-2"
+    >
+      <b
+        :class="item.color + '--text'"
+        :style="$vuetify.breakpoint.xsOnly ? 'font-size: 16px;' : 'font-size: 20px;'"
+      >
         {{ item.title }}
       </b>
     </v-card>

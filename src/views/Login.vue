@@ -1,5 +1,5 @@
 <template>
-  <v-container class="ma-auto">
+  <v-container class="my-auto d-flex flex-column align-center">
     <v-card color="transparent" flat tile height="350px" width="400px">
       <v-form>
         <v-img class="mx-auto" width="70%" src="../assets/logo.svg"></v-img>

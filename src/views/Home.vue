@@ -22,7 +22,19 @@
         Olá, {{ user.name }} :)
       </h1>
       <v-row v-if="summaryDetails">
+        <v-col cols="12" class="pa-0 text-center">
+          <v-btn
+            v-show="!$vuetify.breakpoint.xsOnly"
+            @click="closeDetails"
+            style="margin-bottom: -10px; margin-top: -15px;"
+            dark
+            text
+          >
+            ocultar detalhes
+          </v-btn>
+        </v-col>
         <v-btn
+          v-show="$vuetify.breakpoint.xsOnly"
           @click="closeDetails"
           color="grey"
           absolute

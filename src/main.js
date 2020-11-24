@@ -14,6 +14,17 @@ Vue.filter('money', value => {
   return value;
 });
 
+Vue.filter('date', value => {
+  if (!value) return '';
+  value = value
+    .toISOString()
+    .substr(0, 10)
+    .split('-')
+    .reverse()
+    .join('/');
+  return value;
+});
+
 Vue.config.productionTip = false;
 
 new Vue({
