@@ -24,7 +24,7 @@ export default {
 
 .button-primary {
   border-radius: 15px !important;
-  font-size: 22px !important;
+  font-size: 18px !important;
 }
 
 .v-btn,

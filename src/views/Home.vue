@@ -21,7 +21,7 @@
           <SummaryCard :summary="summary" :height="heightSummaryCardHome" />
         </v-col>
       </v-row>
-      <LastMove />
+      <LastMove class="my-3" />
       <v-row>
         <v-col>
           <v-btn
