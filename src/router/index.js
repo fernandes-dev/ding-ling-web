@@ -6,8 +6,23 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    name: 'Login',
+    component: () => import('../views/Login'),
+  },
+  {
+    path: '/criar-conta',
+    name: 'Register',
+    component: () => import('../views/Register'),
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: () => import('../views/Home'),
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: () => import('../views/NotFound'),
   },
 ];
 

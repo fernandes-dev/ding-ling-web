@@ -29,22 +29,6 @@
                     [
                         "@",
                         "./src"
-                    ],
-                    [
-                        "@components",
-                        "./src/components"
-                    ],
-                    [
-                        "@plugins",
-                        "./src/plugins"
-                    ],
-                    [
-                        "@views",
-                        "./src/views"
-                    ],
-                    [
-                        "@assets",
-                        "./src/assets"
                     ]
                 ],
                 "extensions": [
@@ -55,6 +39,7 @@
         }
     },
     "rules": {
+        "no-console": "warn",
         "import/no-named-as-default": "off",
         "import/no-named-as-default-member": "off",
         "prettier/prettier": "error",
