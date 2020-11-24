@@ -35,7 +35,7 @@ const financial = {
         color: 'secondary',
       },
     ],
-    activeDetails: null,
+    summaryDetails: null,
   }),
   getters: {},
   mutations: { ...mutationsGlobal },

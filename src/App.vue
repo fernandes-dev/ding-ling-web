@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import 'animate.css';
+
 export default {
   name: 'App',
 

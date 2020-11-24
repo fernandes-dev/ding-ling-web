@@ -1,7 +1,7 @@
 <template>
   <v-alert color="#E5E5E5" tile class="tertiary--text py-0 pr-0">
     <v-row align="center">
-      <v-col cols="1">
+      <v-col cols="auto">
         <v-icon x-large>
           mdi-cash
         </v-icon>

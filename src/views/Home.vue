@@ -1,7 +1,7 @@
 <template>
   <v-main class="home">
     <v-app-bar flat v-if="!$vuetify.breakpoint.xsOnly" color="transparent" class="white--text">
-      <h2>Olá, {{ user.name }} :)</h2>
+      <h2 class="animate__animated animate__fadeInDown">Olá, {{ user.name }} :)</h2>
       <v-spacer></v-spacer>
       <div v-for="(item, i) in menu" :key="i" class="mr-5">
         <v-btn :disabled="$store.state.loading" depressed color="primary" :to="item.url">
@@ -15,13 +15,40 @@
       </div>
     </v-app-bar>
     <v-container fluid class="body-app">
-      <h1 v-if="$vuetify.breakpoint.xsOnly" class="welcome-message">Olá, {{ user.name }} :)</h1>
-      <v-row>
-        <v-col v-for="(summary, i) in summaries" :key="i" cols="6">
+      <h1
+        v-if="$vuetify.breakpoint.xsOnly"
+        class="welcome-message animate__animated animate__fadeInDown"
+      >
+        Olá, {{ user.name }} :)
+      </h1>
+      <v-row v-if="summaryDetails">
+        <v-btn
+          @click="closeDetails"
+          color="grey"
+          absolute
+          right
+          icon
+          style="z-index: 10; margin-top: -20px; margin-right: -10px;"
+        >
+          <v-icon>
+            mdi-close
+          </v-icon>
+        </v-btn>
+        <v-col
+          class="animate__animated animate__zoomIn"
+          v-for="(summary, i) in summaries"
+          :key="i"
+          cols="6"
+        >
           <SummaryCard :summary="summary" :height="heightSummaryCardHome" />
         </v-col>
       </v-row>
-      <LastMove class="my-3" />
+      <v-row v-else class="animate__animated animate__zoomIn">
+        <v-col cols="12">
+          <SummaryHome />
+        </v-col>
+      </v-row>
+      <LastMove class="my-3 animate__animated animate__fadeInDown" />
       <v-row>
         <v-col>
           <v-btn
@@ -51,7 +78,7 @@
     </v-container>
     <v-bottom-navigation
       v-if="$vuetify.breakpoint.xsOnly"
-      fixed
+      absolute
       color="white"
       background-color="#7563D1"
     >
@@ -68,16 +95,20 @@
 <script>
 import SummaryCard from '@/components/SummaryCard';
 import LastMove from '@/components/LastMove';
+import SummaryHome from '@/components/SummaryHome';
 
 export default {
   name: 'Home',
-  components: { SummaryCard, LastMove },
+  components: { SummaryCard, LastMove, SummaryHome },
   computed: {
     user() {
       return this.$store.state.user.profile;
     },
     summaries() {
       return this.$store.state.financial.summaries;
+    },
+    summaryDetails() {
+      return this.$store.state.financial.summaryDetails;
     },
     menu() {
       return [
@@ -89,6 +120,11 @@ export default {
     },
     heightSummaryCardHome() {
       return this.$store.state.utils.heightSummaryCardHome;
+    },
+  },
+  methods: {
+    closeDetails() {
+      this.$store.commit('financial/request', ['summaryDetails', false]);
     },
   },
 };
@@ -103,14 +139,6 @@ export default {
   color: white;
   text-align: center;
   font-size: 22px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.summary-card-home {
-  border-left: solid 10px #e55f91 !important;
-}
-
-.body-card-summary-home {
-  height: 100%;
+  margin-bottom: 5px;
 }
 </style>
