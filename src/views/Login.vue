@@ -55,6 +55,8 @@ export default {
         localStorage.setItem('token', resp.data.token);
       } catch (error) {
         console.log(error);
+        alert('aplicativo em fase de desenvolvimento, veja a tela inicial');
+        this.$router.push('/home');
       }
     },
   },

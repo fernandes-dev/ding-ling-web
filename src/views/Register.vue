@@ -27,9 +27,9 @@
         </v-btn>
       </div>
       <div class="text-center mt-3">
-        <v-btn :disabled="$store.state.loading" to="/" class="pa-0" text color="#FFFFFF"
-          >Já possuo uma conta</v-btn
-        >
+        <v-btn :disabled="$store.state.loading" to="/" class="pa-0" text color="#FFFFFF">
+          Já possuo uma conta
+        </v-btn>
       </div>
     </v-form>
   </v-card>
