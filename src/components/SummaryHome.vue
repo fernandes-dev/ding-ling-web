@@ -1,10 +1,19 @@
 <template>
-  <v-card class="summary-home" flat tile :height="$vuetify.breakpoint.xsOnly ? '240px' : '348px'">
+  <v-card
+    class="summary-home"
+    flat
+    tile
+    :height="$vuetify.breakpoint.smAndDown ? '240px' : '348px'"
+  >
     <v-card-text
-      :style="$vuetify.breakpoint.xsOnly ? 'height: 190px;' : 'height: 300px;'"
+      :style="$vuetify.breakpoint.smAndDown ? 'height: 190px;' : 'height: 300px;'"
       class="py-5 pr-0 px-5"
     >
-      <div v-show="$vuetify.breakpoint.xsOnly" style="font-size: 18px;" class="mt-0 primary--text ">
+      <div
+        v-show="$vuetify.breakpoint.smAndDown"
+        style="font-size: 18px;"
+        class="mt-0 primary--text "
+      >
         <div class="mb-1 d-flex justify-space-between pr-3">
           <b>{{ balance.title }}</b>
           <b style="font-size: 16px;">
@@ -15,7 +24,7 @@
           <b> {{ balance.value | money }} </b>
         </div>
       </div>
-      <div v-show="!$vuetify.breakpoint.xsOnly" class="mt-0 mb-6 primary--text ">
+      <div v-show="!$vuetify.breakpoint.smAndDown" class="mt-0 mb-6 primary--text ">
         <div class="mb-3 pr-5 d-flex justify-space-between">
           <b style="font-size: 25px;">{{ balance.title }}</b>
           <b style="font-size: 16px;">
@@ -28,7 +37,7 @@
       </div>
       <v-row class="mt-2" no-gutters>
         <v-col
-          :style="$vuetify.breakpoint.xsOnly ? 'margin-top: 10px;' : 'margin-top: 20px;'"
+          :style="$vuetify.breakpoint.smAndDown ? 'margin-top: 10px;' : 'margin-top: 20px;'"
           v-for="(item, index) in itensHome"
           :key="index"
           cols="12"

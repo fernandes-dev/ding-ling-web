@@ -1,6 +1,6 @@
 <template>
   <v-main class="home">
-    <v-app-bar flat v-if="!$vuetify.breakpoint.xsOnly" color="transparent" class="white--text">
+    <v-app-bar flat v-if="!$vuetify.breakpoint.smAndDown" color="transparent" class="white--text">
       <h2 class="animate__animated animate__fadeInDown">Olá, {{ user.name }} :)</h2>
       <v-spacer></v-spacer>
       <div v-for="(item, i) in menu" :key="i" class="mr-5">
@@ -16,7 +16,7 @@
     </v-app-bar>
     <v-container fluid class="body-app">
       <h1
-        v-if="$vuetify.breakpoint.xsOnly"
+        v-if="$vuetify.breakpoint.smAndDown"
         class="welcome-message animate__animated animate__fadeInDown"
       >
         Olá, {{ user.name }} :)
@@ -24,7 +24,7 @@
       <v-row v-if="summaryDetails">
         <v-col cols="12" class="pa-0 text-center">
           <v-btn
-            v-show="!$vuetify.breakpoint.xsOnly"
+            v-show="!$vuetify.breakpoint.smAndDown"
             @click="closeDetails"
             style="margin-bottom: -10px; margin-top: -15px;"
             dark
@@ -34,7 +34,7 @@
           </v-btn>
         </v-col>
         <v-btn
-          v-show="$vuetify.breakpoint.xsOnly"
+          v-show="$vuetify.breakpoint.smAndDown"
           @click="closeDetails"
           color="grey"
           absolute
@@ -89,7 +89,7 @@
       </v-row>
     </v-container>
     <v-bottom-navigation
-      v-if="$vuetify.breakpoint.xsOnly"
+      v-if="$vuetify.breakpoint.smAndDown"
       absolute
       color="white"
       background-color="#7563D1"

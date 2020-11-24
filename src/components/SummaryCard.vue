@@ -2,7 +2,7 @@
   <v-card
     flat
     tile
-    :height="!$vuetify.breakpoint.xsOnly ? height : '110px'"
+    :height="!$vuetify.breakpoint.smAndDown ? height : '110px'"
     class="summary-card-home"
   >
     <v-card-text class="body-card-summary-home py-0 d-flex flex-column justify-center pr-0 pl-2">
