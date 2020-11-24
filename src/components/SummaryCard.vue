@@ -1,18 +1,12 @@
 <template>
-  <v-card
-    @click="showDetails"
-    flat
-    tile
-    :height="height"
-    class="summary-card-home d-flex flex-column justify-center"
-  >
-    <v-card-text class="body-card-summary-home">
+  <v-card @click="showDetails" flat tile :height="height" class="summary-card-home">
+    <v-card-text class="body-card-summary-home py-0 d-flex flex-column justify-center">
       <div class="font-weight-bold" :class="summary.color + '--text'">
         <div class="mb-3" style="font-size: 20px;">
           {{ summary.title }}
         </div>
         <div class="" style="font-size: 20px;" v-if="summary.qtd">x {{ summary.qtd }}</div>
-        <div class="mb-3" style="font-size: 20px;" v-if="summary.current && summary.total">
+        <div style="font-size: 20px;" v-if="summary.current && summary.total">
           {{ summary.current }} de {{ summary.total }}
         </div>
         <div :class="!summary.qtd && !summary.current ? 'solo-value' : ''" style="font-size: 25px;">

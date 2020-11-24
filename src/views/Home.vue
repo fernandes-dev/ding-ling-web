@@ -111,6 +111,6 @@ export default {
 }
 
 .body-card-summary-home {
-  height: 110px;
+  height: 100%;
 }
 </style>
